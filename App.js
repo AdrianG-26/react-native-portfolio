@@ -1,20 +1,23 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 
+const { width } = Dimensions.get("window");
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Sample</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Image
+        style={styles.profilePicture}
+        source={require("./assets/images/profile-picture.jpg")}
+      />
+
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+  profilePicture: {
+    width,
+    height: width,
   },
 });
